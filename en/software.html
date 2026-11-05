@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="Author" content="Toru Seo">
+<title>Softwares - Seo Lab, Institute of Science Tokyo</title>
+<link rel="icon" type="image/png" href="../assets/seolab_icon.png">
+<link rel="stylesheet" href="../assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2PFQQMG6D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2PFQQMG6D');
+</script>
+</head>
+<body data-page="software">
+<nav class="nav">
+  <a href="index.html" class="brand"><img class="brand-mark" src="../assets/seolab_icon.png" alt=""><span class="brand-jp">Seo Lab</span></a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+  <div class="nav-links"><a href="index.html">Top</a><a href="research.html">Research</a><a href="member.html">Members</a><a href="paper.html">Publications</a><a href="software.html" class="active">Softwares</a><a href="contact.html">Contact</a><a href="link.html">Links</a><a href="../index.html" class="lang-btn">JP</a></div>
+</nav>
+<main>
+<h1>Free software</h1>
+
+<div class="card-grid">
+  <a href="#unsim" class="card"><h3>UNsim</h3><p>Differentiable traffic simulator based on LTM and Dynamic User Optimum. Enables inverse problems and optimization via gradient methods.</p></a>
+  <a href="#uxsim" class="card"><h3>UXsim</h3><p>Free open-source macroscopic / mesoscopic traffic flow simulator in Python.</p></a>
+  <a href="#trafficdemo" class="card"><h3>Traffic flow demo</h3><p>Interactive browser-based demo for learning the fundamentals of traffic flow.</p></a>
+  <a href="#freetse" class="card"><h3>FreeTSE</h3><p>Calibration-free traffic state estimation from detectors and connected vehicle data.</p></a>
+</div>
+
+<h2 id="unsim">UNsim</h2>
+<p>Differentiable traffic simulation in Python. It enables lightning-fast simulation and automatic differentiation by leveraging the Link Transmission Model and Dynamic User Optimum.</p>
+<nav>
+  <a href="https://github.com/toruseo/UNsim" target="_blank" rel="noopener">GitHub repository</a>
+</nav>
+
+<h2 id="uxsim">UXsim</h2>
+<p>UXsim is a free, open-source macroscopic and mesoscopic network traffic flow simulator developed in Python. It is suitable for simulating large-scale (e.g., city-scale) vehicular transportation. It computes dynamic traffic flow in a network by using traffic flow models commonly utilized by transportation research. UXsim would be especially useful for scientific and educational purposes because of its simple, lightweight, and customizable features; but of course users are free to use UXsim for any purpose.</p>
+<nav>
+  <a href="https://github.com/toruseo/UXsim" target="_blank" rel="noopener">GitHub</a>
+  <a href="https://github.com/toruseo/UXsim/blob/main/demos_and_examples/demo_notebook_01en.ipynb" target="_blank" rel="noopener">Simple demo (Jupyter Notebook)</a>
+  <a href="https://toruseo.jp/UXsim/docs/index.html" target="_blank" rel="noopener">Technical documentation</a>
+  <a href="https://arxiv.org/abs/2309.17114" target="_blank" rel="noopener">arXiv preprint on scientific overview</a>
+</nav>
+<figure>
+  <img src="../img/gridnetwork_macro.gif" width="400" alt="UXsim link state">
+  <img src="../img/gridnetwork_fancy.gif" width="400" alt="UXsim vehicle trajectories">
+  <figcaption>Fig: Approximately 60,000 vehicles pass through a 10km × 10km grid network in 2 hours. Left: link state, right: vehicle trajectories</figcaption>
+</figure>
+
+<h2 id="trafficdemo">Demonstration of traffic flow</h2>
+<p>An interactive demonstration of traffic flow that is useful to learn the fundamentals using a simulator on your web browser. You can learn traffic flow phenomena at a bottleneck, traffic state, flow-density relation, time-space diagram, vehicle trajectory, and cumulative count.</p>
+<nav>
+  <a href="../traffic-flow-demo/bottleneck.html" target="_blank" rel="noopener">Demonstration of traffic flow simulation</a>
+</nav>
+<figure>
+  <img src="../img/traffic_flow_demo.png" width="500" alt="Demo screenshot">
+  <figcaption>Fig: Screenshot of the demo</figcaption>
+</figure>
+
+<h2 id="freetse">FreeTSE</h2>
+<p>Calibration-free traffic state estimation method using detectors and connected vehicle data. Easy to use for non-specialists who don't have knowledge of traffic flow theory or programming. It can also be used as a Python module so that you can incorporate it into your own programs.</p>
+<nav>
+  <a href="https://github.com/toruseo/FreeTSE/releases/download/v1.0.0/FreeTSE_executable.zip" target="_blank" rel="noopener">Executable for Windows</a>
+  <a href="https://github.com/toruseo/FreeTSE" target="_blank" rel="noopener">Source code</a>
+</nav>
+<figure>
+  <img src="../img/freetse_data.png" width="500" alt="FreeTSE input data"><br>
+  <img src="../img/freetse_res1.png" width="600" alt="FreeTSE results">
+  <figcaption>Fig: Visualization of input data and estimation results</figcaption>
+</figure>
+</main></body></html>

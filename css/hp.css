@@ -1,0 +1,192 @@
+
+:root{
+	--color-main: #1C3177;
+	--color-sub: #e5edf4;
+}
+
+img { 
+	max-width: 100%;
+	height: auto;
+}
+
+video { 
+	max-width: 100%;
+	/* height: auto; */
+}
+
+iframe { 
+	max-width: 100%;
+	/* height: auto; */
+}
+
+/* .mapiframe {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 60%;
+}
+
+.mapiframe iframe {
+	position: absolute;
+	top: 0;
+	left: 1em;
+	width: 500pt;
+	max-width: 90%;
+	height: 100%;
+} */
+
+span.br {
+	display: inline-block;
+}
+
+body {
+	  
+	color: #000000;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size: 100%;
+	text-align: left;
+	
+	font-size: 16px;
+	line-height: 1.6;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+h1 {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 10px;
+	font-size: 200%;
+	font-weight: bold;
+	text-align: center;
+}
+
+nav {
+	color: #000000;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size: 125%;
+	padding: 5px;
+	font-weight: normal;
+	text-align: center;
+}
+
+nav a { 
+	color: #0000ff;
+	text-decoration: underline;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+h2 {
+	background-color: var(--color-main);
+	text-indent: 0.6em;  
+	border-left: solid 15px #000000;
+	color: #ffffff;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+h3 {
+	background-color: var(--color-main);
+	text-indent: 0.6em;  
+	border-left: solid 12px #000000;
+	color: #ffffff;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size: 125%;
+	font-weight: bold;
+}
+
+h4 {
+	background-color: var(--color-sub);
+	text-indent: 0.4em;  
+	border-left: solid 4px #000000; 
+	color: var(--color-main);
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	font-size: 110%;
+	font-weight: bold;
+}
+
+h5 {
+	color: var(--color-main);
+	margin-top: 1em;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 1em;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+h6 {
+	color: var(--color-main);
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-size: 100%;
+	font-weight: bold;
+}
+
+p {
+	margin-left:1em;
+	margin-right:1em;
+}
+
+/* div {
+	margin-left:1em;
+	margin-right:1em;
+} */
+
+
+details {
+	color: #888888;
+}
+summary {
+	cursor: pointer;
+}
+summary:hover {
+  cursor: pointer;
+  background-color: #EFEFEF;
+}
+
+.repo-preview {
+	margin-left: 1em;
+	border: 1px solid #e1e4e8;
+	border-radius: 6px;
+	padding: 16px;
+	max-width: 400px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.repo-preview img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 3px;
+}
+
+.repo-preview h2 {
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+.repo-preview p {
+	color: #586069;
+	font-size: 14px;
+	margin-top: 5px;
+}

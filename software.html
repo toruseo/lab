@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="Author" content="Toru Seo">
+<title>ソフトウェア - 東京科学大学 瀬尾研究室 - Seo Lab, Institute of Science Tokyo</title>
+<link rel="icon" type="image/png" href="assets/seolab_icon.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2PFQQMG6D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2PFQQMG6D');
+</script>
+</head>
+<body data-page="software">
+<nav class="nav">
+  <a href="index.html" class="brand"><img class="brand-mark" src="assets/seolab_icon.png" alt=""><span class="brand-jp">瀬尾研究室</span></a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+  <div class="nav-links"><a href="index.html">トップ</a><a href="research.html">研究内容</a><a href="member.html">メンバー</a><a href="paper.html">論文</a><a href="software.html" class="active">ソフトウェア</a><a href="contact.html">連絡先</a><a href="link.html">リンク</a><a href="en/index.html" class="lang-btn">EN</a></div>
+</nav>
+<main>
+<h1>公開ソフトウェア</h1>
+
+<p>
+  研究成果を積極的にオープンソースソフトウェアとして公開しています．
+  単にソースコードを公開するだけではなく，他の方が使いやすい形での公開を心がけています．
+</p>
+<div class="card-grid">
+  <a href="#uxsim" class="card"><h3>UXsim</h3>
+    <p>Python製のオープンソース・フリーなマクロ・メソ交通流シミュレータ</p></a>
+  <a href="#unsim" class="card"><h3>UNsim</h3>
+    <p>微分可能プログラミングに基づく次世代マクロ交通シミュレータ．勾配法による逆問題・最適化を実現</p></a>
+  <a href="#roadviewer" class="card"><h3>道路閲覧検索アプリ</h3>
+    <p>日本の道路網をブラウザ上で閲覧・検索できるWebアプリケーション</p></a>
+  <a href="#trafficdemo" class="card"><h3>交通流基礎のWebブラウザ上デモ</h3>
+    <p>ボトルネックなどの交通流現象を可視化するブラウザ内インタラクティブデモ</p></a>
+  <a href="#freetse" class="card"><h3>FreeTSE</h3>
+    <p>観測データから道路の交通状態を柔軟に推定するキャリブレーション不要手法</p></a>
+  <a href="#excel" class="card"><h3>Excelで学ぶ交通シミュレーション</h3>
+    <p>Kinematic Wave理論をExcel上で実装した教育目的のプログラム．授業・独学用</p></a>
+</div>
+
+
+<h2 id="uxsim">UXsim</h2>
+<p>Python製のオープンソース・フリーなマクロ・メソ交通流シミュレータです．これは，都市規模のような大局的な自動車交通とその渋滞を再現する交通シミュレーションであり，交通工学分野で標準的なモデルにより道路ネットワークの動的交通流を計算するものです．UXsimは単純，軽量，柔軟であるため，研究・教育上の目的に適することを意図していますが，それ以外の目的にも自由に使用可能です．詳細は以下のGitHubリポジトリを参照してください．</p>
+<nav>
+  <a href="https://github.com/toruseo/UXsim" target="_blank" rel="noopener">GitHub リポジトリ</a>
+  <a href="https://github.com/toruseo/UXsim/blob/main/README.jp.md" target="_blank" rel="noopener">日本語説明書</a>
+</nav>
+<figure>
+  <img src="img/gridnetwork_macro.gif" width="400" alt="UXsim リンク状態">
+  <img src="img/gridnetwork_fancy.gif" width="400" alt="UXsim 車両軌跡">
+  <figcaption>図：10km x 10kmの格子状ネットワーク上の6万台の車両の2時間シミュレーション．左：リンク状態，右：一部車両軌跡</figcaption>
+</figure>
+
+<h2 id="unsim">UNsim</h2>
+<p>Python製の微分可能交通流シミュレータです．交通工学理論のLink Transmission ModelとDynamic User Optimumに基づき，超高速なシミュレーションと自動微分が可能です．</p>
+<nav>
+  <a href="https://github.com/toruseo/UNsim" target="_blank" rel="noopener">GitHub リポジトリ</a>
+</nav>
+
+<h2 id="roadviewer">道路閲覧検索アプリ/road-viewer-finder</h2>
+<p>日本の道路をブラウザで閲覧・検索できるWebアプリです．「あの道路どこだっけ？」みたいな疑問を検索で簡単に解消することを目的にしています．</p>
+<nav>
+  <a href="https://toruseo.github.io/road-viewer-finder/" target="_blank" rel="noopener">Webアプリリンク</a>
+</nav>
+<figure>
+  <img src="img/rvf_246.png" width="600" alt="road-viewer-finder">
+  <figcaption>図：道路を路線番号などで検索してハイライト表示</figcaption>
+</figure>
+
+<h2 id="trafficdemo">交通流基礎のWebブラウザ上デモ</h2>
+<p>交通流の基礎をWebブラウザ上のシミュレーションを通じて簡単に学べるインタラクティブなデモです．ボトルネックの交通現象，交通状態，流率密度関係，時空間図，車両軌跡，累積図などを学べます．</p>
+<nav>
+  <a href="traffic-flow-demo/bottleneck_jp.html" target="_blank" rel="noopener">交通流シミュレーションのデモ</a>
+</nav>
+<figure>
+  <img src="img/traffic_flow_demo.png" width="500" alt="デモの画面">
+  <figcaption>図：デモの画面</figcaption>
+</figure>
+
+<h2 id="freetse">FreeTSE</h2>
+<p>車両感知器とプローブカーデータに基づくキャリブレーション不要な交通状態推定ソフトです．交通流理論，交通データ，プログラミングについての専門知識がなくても容易に使えるように設計されています．Pythonモジュールとしても使えるので，技術があれば自作のプログラムに組み込むことも出来ます．</p>
+<nav>
+  <a href="https://github.com/toruseo/FreeTSE/releases/download/v1.0.0/FreeTSE_executable.zip" target="_blank" rel="noopener">ソフトウェア本体（Windows用）</a>
+  <a href="https://github.com/toruseo/FreeTSE" target="_blank" rel="noopener">ソースコード</a>
+</nav>
+<figure>
+  <img src="img/freetse_data.png" width="500" alt="FreeTSE 入力データ"><br>
+  <img src="img/freetse_res1.png" width="600" alt="FreeTSE 推定結果">
+  <figcaption>図：入力データと推定結果の可視化</figcaption>
+</figure>
+
+<h2 id="excel">Excelで学ぶ交通シミュレーション</h2>
+<p>大規模な交通シミュレーションのための代表的な理論であるKinematic Wave理論をExcel上で実装した教育目的のプログラムです．交通工学研究会会誌『交通工学』第52巻4号の特集「マクロ交通流理論の最前線と実務への応用」に関連して作成されました．</p>
+<nav>
+  <a href="https://www.researchgate.net/publication/320087087" target="_blank" rel="noopener">Cell Transmission Model</a>
+  <a href="https://www.researchgate.net/publication/320086980" target="_blank" rel="noopener">Variational Theory</a>
+  <a href="https://www.researchgate.net/publication/320086985" target="_blank" rel="noopener">Newellの追従モデル</a>
+  <a href="https://www.researchgate.net/publication/320087297" target="_blank" rel="noopener">セルオートマトン</a>
+  <a href="https://www.researchgate.net/publication/320087319" target="_blank" rel="noopener">解説書</a>
+</nav>
+<figure>
+  <img src="img/ctm.png" width="680" alt="Cell Transmission Model">
+  <figcaption>図：Cell Transmission Modelによる信号待ちの再現．濃い赤が待ち行列</figcaption>
+</figure>
+<figure>
+  <img src="img/xmodel.png" width="280" alt="Newellの追従モデル">
+  <figcaption>図：Newellの追従モデルによる信号待ちの再現</figcaption>
+</figure>
+</main></body></html>

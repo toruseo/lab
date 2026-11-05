@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+    <head>
+        <title>交通流とシミュレーション</title>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Toru Seo">
+        <meta name="description" content="交通流の基礎を学ぶための，インタラクティブな交通流シミュレーションデモです">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="tf.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2PFQQMG6D"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-R2PFQQMG6D');
+        </script>
+    </head>
+    <body>
+        <h1>交通流とシミュレーション</h1>
+        <p>
+          <canvas id="main" width="800" height="320"></canvas>
+        </p>
+        <script type="text/javascript" src="util.js"></script>
+        <script type="text/javascript" src="model.js"></script>
+        <script type="text/javascript" src="mainloop.js"></script>
+        <script type="text/javascript" src="scenario_bottleneck.js"></script>
+
+        <hr>
+        <p>
+          <button id="pauseButton">一時停止 / 再開</button>
+          <h5>流入量</h5>
+          <input id="inflow" type="range" min="0" max="100" step="1" value="20">
+          <span id="inflow_value">10</span>
+
+          <h5>ボトルネックの影響力</h5>
+          <label><input id="bn_none" type="radio" name="bn_impact" value="n"> 無 </label>
+          <label><input id="bn_light" type="radio" name="bn_impact" value="l"> 弱 </label>
+          <label><input id="bn_heavy" type="radio" name="bn_impact" value="h" checked> 強 </label>
+
+          <h5>追加情報</h5>
+          <label><input id="traffic_state" type="checkbox"> 交通状態（流率，密度，速度）</label><br>
+          <label><input id="flow_density" type="checkbox"> 流率密度図</label><br>
+          <label><input id="ts_diagram_trajects" type="checkbox"> 車両軌跡の時空間図</label><br>
+          <label><input id="ts_diagram_state" type="checkbox"> 交通状態の時空間図：</label>
+            <label><input id="state_q" type="radio" name="ts_diagram_state_which" value="q">流率 </label>
+            <label><input id="state_k" type="radio" name="ts_diagram_state_which" value="k" checked>密度 </label>
+            <label><input id="state_v" type="radio" name="ts_diagram_state_which" value="v">速度 </label><br>
+          <label><input id="cumlative" type="checkbox"> 累積図</label>
+
+          <h5>交通流モデル</h5>
+          <label><input id="model_newell" type="radio" name="model" value="newell" checked> Newellモデル（Kinematic Wave理論）</label><br>
+          <label><input id="model_nasch" type="radio" name="model" value="nasch"> Nagel-Schreckenbergモデル</label>
+        </p>
+        <hr>
+        <h2>説明</h2>
+        <p>
+          これは交通流の基礎を学ぶための，インタラクティブな交通流シミュレーションデモです．
+          交通流とは，道路上を走る多数の車両を流れとして捉えた概念で，渋滞現象などを分析するのに適したものです．
+        </p>
+        <p>
+          一本の道路上の<a href="https://en.wikipedia.org/wiki/Traffic_flow" target="_blank">交通流</a>が標準的な交通流モデルによってシミュレートされています．
+          この道路区間上には<a href="https://en.wikipedia.org/wiki/Traffic_bottleneck" target="_blank">ボトルネック</a>が存在します．
+          もし流入量がボトルネック容量を上回れば，交通渋滞が発生します．
+          流入量とボトルネック容量は操作パネルを使って変更できます．
+          試してみてください．
+        </p>
+        <p>
+          「追加情報」のパネルを操作すると，<a href="https://en.wikipedia.org/wiki/Traffic_flow#Traffic_stream_properties" target="_blank">巨視的な交通状態変数</a>，すなわち単位時間当たりの車両通過台数である流率（flow），単位距離当たりの車両存在台数である密度（density），車両平均速度（speed）を計算できます． 
+          車両の流れが激しい箇所ほど流率が大きく，車両が混雑している箇所ほど密度が大きく速度が小さいことがわかります．
+          さらに，交通状態変数を流率-密度関係図として可視化できます．
+          様々な交通状況を生成した後のこの図には，三角形状のパターンが見いだせるかもしれません．
+          これは<a href="https://en.wikipedia.org/wiki/Fundamental_diagram_of_traffic_flow" target="_blank">流率密度関係（Fundamental Diagram）</a>と呼ばれる，交通流で最も基礎的な関係です．
+        </p>
+        <p>
+          また，車両軌跡の<a href="https://en.wikipedia.org/wiki/Traffic_flow#Traffic_stream_properties" target="_blank">時空間図</a>を描画できます．
+          この図は，横軸を時間（右ほど将来），縦軸を位置（上ほど下流）とし，個々の車両の軌跡を曲線として表現したものです．
+          曲線の傾きが大きいほど車両の速度が速いことを意味しています．
+          この図は交通流のダイナミクスに関する外形的情報を全て含んでおり，交通流の解析上非常に重要なツールです．
+          そして，交通状態の時空間図も描画できます．
+          これは，車両軌跡よりも粗い情報ですが，簡潔に交通流のダイナミクスを把握でき，これも重要なツールです．
+        </p>
+        <p>    
+          さらに，<a href="https://en.wikipedia.org/wiki/Traffic_flow#Cumulative_vehicle_count_curves_(N-curves)" target="_blank">累積図</a>も描画できます．
+          これは，ある地点を通過した車両の延べ台数をプロットしたものです．
+          累積図はボトルネック交通流を解析するためのより単純な方法です．
+          例えば，"bottleneck"と"upstream end (shifted)"の二つの曲線の間の横方向距離は，渋滞によって生じた遅れ時間を表しています．
+        </p>
+        <p>
+          交通流モデルとしては以下の2種類が選択できます：<a href="https://en.wikipedia.org/wiki/Newell%27s_car-following_model" target="_blank">Newellの単純追従モデル</a>および<a href="https://en.wikipedia.org/wiki/Nagel%E2%80%93Schreckenberg_model" target="_blank">Nagel-Schreckenbergセルオートマトン</a>．
+          Newellモデルは非常に単純ですが交通流の基本的性質を十分再現できるモデルです．
+          さらに，これは標準的なマクロ交通流モデルであるKinematic Wave理論と等価です．
+          Nagel-Schreckenbergモデルはより複雑なモデルです（Newellモデルを拡張したものと位置づけられます）．
+          渋滞中の疎密波や容量低下現象など，複雑な現象が観察できます．
+          ※専門家向け技術情報：ボトルネック容量は，ボトルネック区間の渋滞密度を減少させて表現しています．
+        </p>   
+        <p>
+          ※専門家向け技術情報：ボトルネック容量は，ボトルネック区間の渋滞密度を減少させて表現しています．
+        </p>   
+        <h2>例題</h2>
+        <ul>
+          <li>
+            <b>Q1.1</b>：ボトルネックの影響力を「無」，交通流モデルを「Newellモデル」にしてください．
+            このとき，この道路を通過できる最大の流率（交通容量と呼びます）はいくつでしょうか？
+          </li>
+          <li>
+            <b>Q1.2</b>：次に，トルネックの影響力を「強」にしてください．
+            このとき，このボトルネックの交通容量はいくつでしょうか？
+            なお，道路への流入量がボトルネックの交通容量以上のとき，ボトルネック上流で低速な領域が出現します．
+            これを渋滞と呼びます．
+          </li>
+          <li>
+            <b>Q2.1</b>：ボトルネックの影響力を「無」，交通流モデルを「Nagel-Schreckenbergモデル」にしてください．
+            このとき，この道路の交通容量はいくつでしょうか？
+          </li>
+          <li>
+            <b>Q2.2</b>：次に，ボトルネックの影響力を「強」にしてください．
+            このとき，渋滞が起きない最大の流入量はいくつでしょうか？
+          </li>
+          <li>
+            <b>Q2.3</b>：さらに，このとき，渋滞が起きた後のボトルネックの交通容量はいくつでしょうか？
+            このように，渋滞が起きる前よりも後の方が通過流率が低い現象を渋滞時の容量低下（capacity drop）と呼びます．
+          </li>
+        </ul>
+        <h2>その他</h2>
+        <h3>さらに高度な交通シミュレーション</h3>
+        <p>
+          本格的なネットワーク交通流シミュレータ<a href="https://github.com/toruseo/UXsim" target="_blank">UXsim</a>をPython製のオープンソースで公開しています．
+          また，交通流理論・シミュレーションを体系的・専門的に知りたい方は，専門書<a href="https://www.coronasha.co.jp/np/isbn/9784339052794/" target="_blank">『マクロ交通流シミュレーション：数学的基礎理論とPythonによる実装』</a>をご覧ください．
+        </p>
+        <h3>補足（専門家向け技術情報）</h3>
+        <p>
+          ボトルネック容量は，両モデル共にボトルネック区間の渋滞密度を減少＝停止時車頭距離を増加させて表現しています．
+        </p>   
+        <h2>リンク</h2>    
+        <ul>
+          <li><a href="https://github.com/toruseo/traffic-flow-demo" target="_blank">本シミュレータのソースコード</a></li>
+          <li>発展版シミュレータ：<a href="https://github.com/toruseo/UXsim" target="_blank">UXsim</a></li>
+          <li>参考書：<a href="https://www.coronasha.co.jp/np/isbn/9784339052794/" target="_blank">マクロ交通流シミュレーション：数学的基礎理論とPythonによる実装</a></li>
+          <li>専門文献：<a href="https://doi.org/10.1016/S0191-2615(00)00044-8" target="_blank">Newellモデル</a>, <a href="https://doi.org/10.1051/jp1:1992277" target="_blank">Nagel-Schreckenbergモデル</a>, <a href="http://dx.doi.org/10.1016/B978-0-08-102671-7.10306-9" target="_blank">ボトルネック</a>, <a href="http://dx.doi.org/10.1016/B978-0-08-102671-7.10303-3" target="_blank">交通流のブレイクダウン</a></li>
+          <li>影響を受けたページ：<a href="http://faculty.ce.berkeley.edu/daganzo/" target="_blank">Prof. Carlos F. Daganzo's webpage</a>, <a href="https://trafficvis.com/" target="_blank">Traffic Vis</a></li>
+          <li>作成者のページ：<a href="https://toruseo.github.io" target="_blank">瀬尾亨</a>，<a href="https://seo.cv.ens.titech.ac.jp" target="_blank">瀬尾研究室（東京科学大学）</a></li>
+          <li><a href="bottleneck.html" target="_blank">English version</a></li>
+        </ul>
+        <hr>
+        <div style="text-align: center">
+          Copyright (c) Toru Seo. Licensed under CC-BY or MIT License
+        </div>
+    </body>
+</html>

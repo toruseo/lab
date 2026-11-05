@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+    <head>
+        <title>Traffic Flow and Simulation</title>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Toru Seo">
+        <meta name="description" content="This page shows interactive demonstrations of traffic flow simulation to learn some of the most fundamental concepts of traffic flow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="tf.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-R2PFQQMG6D"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-R2PFQQMG6D');
+        </script>
+    </head>
+    <body>
+        <h1>Traffic Flow and Simulation</h1>
+        <p>
+          <canvas id="main" width="800" height="320"></canvas>
+        </p>
+        <script type="text/javascript" src="util.js"></script>
+        <script type="text/javascript" src="model.js"></script>
+        <script type="text/javascript" src="mainloop.js"></script>
+        <script type="text/javascript" src="scenario_bottleneck.js"></script>
+
+        <hr>
+        <p>
+          <button id="pauseButton">Pause / Resume</button>
+
+          <h5>Inflow</h5>
+          <input id="inflow" type="range" min="0" max="100" step="1" value="20">
+          <span id="inflow_value">10</span>
+
+          <h5>Bottleneck impact</h5>
+          <label><input id="bn_none" type="radio" name="bn_impact" value="n"> none </label>
+          <label><input id="bn_light" type="radio" name="bn_impact" value="l"> light </label>
+          <label><input id="bn_heavy" type="radio" name="bn_impact" value="h" checked> heavy </label>
+
+          <h5>Additional information</h5>
+          <label><input id="traffic_state" type="checkbox"> Traffic state (flow, density, speed)</label><br>
+          <label><input id="flow_density" type="checkbox"> Flow-density plot</label><br>
+          <label><input id="ts_diagram_trajects" type="checkbox"> Time-space diagram of vehicle trajectories</label><br>
+          <label><input id="ts_diagram_state" type="checkbox"> Time-space diagram of traffic states: </label>
+            <label><input id="state_q" type="radio" name="ts_diagram_state_which" value="q"> flow </label>
+            <label><input id="state_k" type="radio" name="ts_diagram_state_which" value="k" checked> density </label>
+            <label><input id="state_v" type="radio" name="ts_diagram_state_which" value="v"> speed </label><br>
+          <label><input id="cumlative" type="checkbox"> Cumulative count</label>
+
+          <h5>Traffic flow model</h5>
+          <label><input id="model_newell" type="radio" name="model" value="newell" checked> Newell model (Kinematic Wave Theory)</label><br>
+          <label><input id="model_nasch" type="radio" name="model" value="nasch"> Nagel-Schreckenberg model</label>
+        </p>
+        <hr>
+        <h2>Explanations</h2>
+        <p>
+          This page shows interactive demonstrations of traffic flow simulation to learn some of the most fundamental concepts of traffic flow.
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Traffic_flow" target="_blank">Vehicular traffic flow</a> on a road section is simulated by using standard traffic flow models.
+          The road segment has a <a href="https://en.wikipedia.org/wiki/Traffic_bottleneck" target="_blank">bottleneck</a>.
+          If the inflow exceeds the bottleneck capacity, traffic congestion occurs.
+          You can control the inflow and the bottleneck impact by using the above control panel.
+          Try it now!
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Traffic_flow#Traffic_stream_properties" target="_blank">Macroscopic traffic state variables (i.e., flow, density, speed)</a> can be computed for each road segment by checking the options in "Additional information" panel.
+          You can see that these variables properly reflect the movement of multiple vehicles.
+          Furthermore, these variables can be visualized as flow-density plots.
+          After generating various traffic conditions, you may see a triangular relation in the plot; this is the <a href="https://en.wikipedia.org/wiki/Fundamental_diagram_of_traffic_flow" target="_blank">fundamental diagram</a>, which determines the fundamental feature of the traffic flow.
+        </p>
+        <p>
+          Vehicle trajectories can be visualized by using the concept of <a href="https://en.wikipedia.org/wiki/Traffic_flow#Traffic_stream_properties" target="_blank">time-space diagram</a>, in which each curve represents a trajectory of a vehicle.
+          This diagram provides full information on the dynamics the traffic flow at a glance.
+          Traffic states can also be visualized as a time-space diagram.
+          This is coarser but more concise representation of the traffic dynamics.
+        </p>
+        <p>          
+          You can also plot the <a href="https://en.wikipedia.org/wiki/Traffic_flow#Cumulative_vehicle_count_curves_(N-curves)" target="_blank">cumulative count</a>, which is the cumulative number of vehicles that passed a certain location.
+          This is another useful tool to analyze traffic flow (especially one at a bottleneck) in a simple way.
+          For example, the horizontal distance between "bottleneck" and "upstream end (shifted)" curves represents the delay time induced by the congestion.
+        </p>
+        <p>
+          Following two traffic flow models can be selected: <a href="https://en.wikipedia.org/wiki/Newell%27s_car-following_model" target="_blank">Newell's simplified car-following model</a> and <a href="https://en.wikipedia.org/wiki/Nagel%E2%80%93Schreckenberg_model" target="_blank">Nagel-Schreckenberg cellular automaton</a>.
+          Newell's model is very simple yet useful to simulate basic phenomena of traffic flow; and it is equivalent to the standard macroscopic traffic flow model known as Kinematic Wave Theory.
+          Nagel-Schreckenberg model is more complicated; it can be considered as an extension of Newell's model, and shows more complex phenomenon such as stop-and-go waves and capacity drop.
+        </p>    
+        <h2>Quiz</h2>    
+        <ul>
+          <li>
+            <b>Q1.1</b>: Set the bottleneck influence to "none" and the traffic flow model to "Newell model". What is the maximum flow rate (called traffic capacity) that can pass this road?
+          </li>
+          <li>
+            <b>Q1.2</b>: Next, set the influence of the bottleneck to "heavy". What is the traffic capacity of this bottleneck? Note that when the volume of traffic entering the road is greater than the traffic capacity of the bottleneck, an area of low speed appears upstream of the bottleneck. This is called congestion.
+          </li>
+          <li>
+            <b>Q2.1</b>: Set the bottleneck influence to "none" and the traffic flow model to the "Nagel-Schreckenberg model". What is the traffic capacity of this road?
+          </li>
+          <li>
+            <b>Q2.2</b>: Next, set the bottleneck influence to "strong". What is the maximum traffic flow that will not cause congestion?
+          </li>
+          <li>
+            <b>Q2.3</b>: Furthermore, what is the traffic capacity of the bottleneck after congestion occurs? This phenomenon, in which the discharge flow rate is lower after a traffic jam than before it occurs, is called capacity drop.
+          </li>
+        </ul>
+        <h2>Others</h2>
+        <h3>Advanced Traffic Simulation</h3>
+        <p>
+          More advanced network traffic simulator <a href="https://github.com/toruseo/UXsim" target="_blank">UXsim</a> is published as open source software in Python.
+        </p>
+        <h3>Supplementary Information for Specialists</h3>  
+        <p>
+          The bottleneck for the both model is modeled by increasing the jam density at the bottleneck segment.
+        </p>
+        <h2>Links</h2>    
+        <ul>
+          <li><a href="https://github.com/toruseo/traffic-flow-demo" target="_blank">Source codes of the simulator</a></li>
+          <li>Advanced simulator:<a href="https://github.com/toruseo/UXsim" target="_blank">UXsim</a></li>
+          <li>Book: <a href="https://www.coronasha.co.jp/np/isbn/9784339052794/" target="_blank">Macroscopic Traffic Simulation</a> (Japanese book written by Seo, published by Corona Publishing, Co., Ltd.)</li>
+          <li>Academic articles: <a href="https://doi.org/10.1016/S0191-2615(00)00044-8" target="_blank">Newell's model</a>, <a href="https://doi.org/10.1051/jp1:1992277" target="_blank">Nagel-Schreckenberg model</a>, <a href="http://dx.doi.org/10.1016/B978-0-08-102671-7.10306-9" target="_blank">Bottleneck</a>, <a href="http://dx.doi.org/10.1016/B978-0-08-102671-7.10303-3" target="_blank">Flow breakdown</a></li>
+          <li>Inspired by: <a href="http://faculty.ce.berkeley.edu/daganzo/" target="_blank">Prof. Carlos F. Daganzo's webpage</a>, <a href="https://trafficvis.com/" target="_blank">Traffic Vis</a></li>
+          <li>The author: <a href="https://toruseo.github.io/" target="_blank">Toru Seo</a>, <a href="https://seo.cv.ens.titech.ac.jp/en/" target="_blank">Seo Lab at Institute of Science Tokyo</a></li>
+          <li><a href="bottleneck_jp.html" target="_blank">日本語版</a></li>
+        </ul>
+        <hr>
+        <div style="text-align: center">
+          Copyright (c) Toru Seo. Licensed under CC-BY or MIT License
+        </div>
+    </body>
+</html>

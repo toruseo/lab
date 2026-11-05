@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="Author" content="Toru Seo">
+<meta name="description" content="瀬尾研究室（東京科学大学 土木・環境工学系）のホームページです．交通流理論，交通データ解析，次世代交通システムを理論とデータに基づき研究しています．">
+<title>東京科学大学 瀬尾研究室 - Seo Lab, Institute of Science Tokyo</title>
+<link rel="icon" type="image/png" href="assets/seolab_icon.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2PFQQMG6D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2PFQQMG6D');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Seo Lab, Institute of Science Tokyo",
+  "alternateName": ["Seo Lab", "Seo Lab, Tokyo Tech", "Seo Lab, Science Tokyo"],
+  "url": "https://seo.cv.ens.titech.ac.jp/"
+}
+</script>
+</head>
+<body data-page="home">
+<nav class="nav">
+  <a href="index.html" class="brand"><img class="brand-mark" src="assets/seolab_icon.png" alt=""><span class="brand-jp">瀬尾研究室</span></a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+  <div class="nav-links"><a href="index.html" class="active">トップ</a><a href="research.html">研究内容</a><a href="member.html">メンバー</a><a href="paper.html">論文</a><a href="software.html">ソフトウェア</a><a href="contact.html">連絡先</a><a href="link.html">リンク</a><a href="en/index.html" class="lang-btn">EN</a></div>
+</nav>
+
+<main>
+<div class="hero">
+  <h1><em>東京科学大学 瀬尾研究室</em></h1>
+  <h1>交通工学とデータサイエンスの融合</h1>
+<div>
+<div>
+  <p>
+    交通システムは私たちの生活に欠かせません．
+    一方で，混雑や環境負荷などが重大な問題となっています．
+    瀬尾研究室では，それらを数理的方法により解決し，より良い社会を実現するための方法を研究しています．
+    特に，交通システムと情報通信技術を組み合せて効率化する方法を理論とデータに基づき探ります．
+  </p>
+  <p>
+    例えば，巨大な都市を流れる膨大な交通の流れの実態を，データに基づき把握するにはどうすればよいか？
+    それを大規模シミュレーションにより再現するにはどうすればよいか？
+    交通を最適化するにはどうすればよいか？
+    新技術を使った次世代の交通システムはどうあるべきか？
+    といったことを研究しています．
+  </p>
+  <p>
+    瀬尾亨准教授が当研究室を主宰しており，河瀬理貴助教が在籍しています．
+    東京科学大学 環境・社会理工学院 土木・環境工学系 土木工学コースに所属しています．
+    科学大交通系研究室のグループであるTransport Studies Unitにも所属しています．
+  </p>
+  <p>
+    研究室の詳細に興味のある方は<a href="pdf/研究室紹介.pdf">研究室紹介スライド</a>もご覧ください．
+    大学院入試で当研究室を希望される方は，必ず事前に瀬尾に相談してください．
+    研究室見学・相談のご要望はいつでもお受けしています．
+  </p>
+  <div class="hero-meta">
+    <dl>
+      <dt>所属</dt>
+      <dd>東京科学大学 環境・社会理工学院<br>土木・環境工学系 土木工学コース</dd>
+    </dl>
+    <dl>
+      <dt>指導教員</dt>
+      <dd><a href="https://toruseo.jp/index_jp.html" target="_blank" rel="noopener">瀬尾 亨</a> 准教授</dd>
+      <dd><a href="https://sites.google.com/view/riki-kawase-homepage" target="_blank" rel="noopener">河瀬 理貴</a> 助教</dd>
+    </dl>
+    <dl>
+      <dt>所在</dt>
+      <dd>大岡山キャンパス<br>西6号館 407 / 411号室</dd>
+    </dl>
+  </div>
+</div>
+<canvas class="cpa-scene" width="400" height="400"></canvas>
+</div>
+</div>
+<script src="assets/cpa-scene.js" defer></script>
+
+<h2>主要研究内容</h2>
+  <div class="card-grid">
+    <a href="research.html#tse" class="card">
+      <h3>交通データ解析・推定・制御</h3>
+      <p>広域に分散した観測データから，道路網全体の交通状態を推定し，解析・制御に応用</p>
+    </a>
+    <a href="research.html#tft" class="card">
+      <h3>交通流理論・シミュレーション</h3>
+      <p>自動車・歩行者・鉄道など「流れ」を数理モデルで記述．モデルを開発・計算</p>
+    </a>
+    <a href="research.html#next" class="card">
+      <h3>次世代交通システム理論</h3>
+      <p>自動運転・ライドシェア・MaaSなど新しいモビリティの基礎理論・制御・都市設計</p>
+    </a>
+    <a href="software.html" class="card">
+      <h3>オープンソースソフトウェア</h3>
+      <p>Python製交通流シミュレーションライブラリUXsimなどを公開</p>
+    </a>
+  </div>
+
+    <!--
+<h2>研究室見学</h2>
+
+  <p>
+    研究室配属や大学院入試のための見学会を以下の日程で開催します．
+    参加を希望される方は前日の夕方までに瀬尾にメールをください．
+    みなさまの参加をお待ちしております．
+  </p>
+
+  <ul>
+    <li>2026年4月に研究室に配属される科学大3年生向け：</li>
+    <ul>
+      <li>2026-02-19 15:00-16:00（対面 or Zoom）</li>
+      <li>2026-03-24 14:00-15:00（対面 or Zoom）（当日飛び入り可）</li>3月を1日減らし，4月以降に1日設ける
+    </ul>
+    <li>2027年4月入学の大学院入試で外部から東京科学大学を受験される方向け：</li>
+    <ul>
+      <li>2026-02-19 14:00-15:00（対面 or Zoom）</li>
+      <li>2026-03-24 15:00-16:00（対面 or Zoom）</li>
+      <li>2026-04-18 系コース大学院入試説明会後（対面 or Zoom）</li>3月を1日減らし，4月以降に1日設ける．それ以外はリクエストが多すぎて対応不能とする
+    </ul>
+  </ul> 
+  <p>
+    研究内容や研究室生活に興味のある方は<a href="pdf/研究室紹介.pdf">研究室紹介スライド</a>もご覧ください．
+  </p>
+    -->
+
+
+<h2>ニュース</h2>
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-date">2026-09-28</div>
+      <div class="news-body">新入生が配属（修士1名）</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-09-24</div>
+      <div class="news-body">学生が修了(修士3名)</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-04-27</div>
+      <div class="news-body"><a href="https://toruseo.jp/iTIC-probe-viewer/" target="_blank" rel="noopener">iTICプローブカーデータの可視化Web GIS</a>を公開</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-04-22</div>
+      <div class="news-body">研究室HPをリニューアル</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-04-15</div>
+      <div class="news-body">微分可能交通シミュレータの<a href="https://doi.org/10.48550/arXiv.2604.11380" target="_blank" rel="noopener">arXivプレプリント</a>と<a href="https://github.com/toruseo/UNsim" target="_blank" rel="noopener">OSS実装UNsim</a>を公開</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-04-06</div>
+      <div class="news-body">新入生が配属（学士2名）</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-04-02</div>
+      <div class="news-body">新入生が配属（修士3名）</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">2026-04-01</div>
+      <div class="news-body"><a href="https://doi.org/10.14954/jste.12.3_12" target="_blank" rel="noopener">コネクティッドカーデータを用いた信号交差点の交通容量推定</a>に関する論文が交通工学論文集に掲載</div>
+    </div>
+  </div>
+
+  <details class="news-details">
+    <summary>過去ログ</summary>
+      <div class="news-item">
+        <div class="news-date">2026-03-26</div>
+        <div class="news-body">学生が卒業・修了(学士1名，修士3名)．大川佳乃さんが木村賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026-02-06</div>
+        <div class="news-body"><a href="https://toruseo.jp/road-viewer-finder/" target="_blank" rel="noopener">日本の道路をブラウザで閲覧・検索できるWebアプリ</a>を公開</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-09-22</div>
+        <div class="news-body">学生が修了(修士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-09-20</div>
+        <div class="news-body"><a href="https://doi.org/10.2208/jscejj.24-00194" target="_blank" rel="noopener">道路網と渋滞の関係を方向統計で分析した論文</a>が土木学会論文集に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-07-01</div>
+        <div class="news-body"><a href="https://orsj.org/?p=8329" target="_blank" rel="noopener">分布的ロバスト計画法によるネットワークフロー最適化の特集記事</a>が機関誌「オペレーションズ・リサーチ」に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-07-01</div>
+        <div class="news-body"><a href="https://doi.org/10.2208/jscejj.24-20029" target="_blank" rel="noopener">交通流モデルの実データによる推定に関する研究</a>と<a href="https://doi.org/10.2208/jscejj.24-20072" target="_blank" rel="noopener">救援物資の在庫モデルに関するレビュー論文</a>が土木学会論文集に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-06-04</div>
+        <div class="news-body">短期訪問者を受入れ(博士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-05-23</div>
+        <div class="news-body"><a href="https://doi.org/10.1007/s13177-025-00492-x" target="_blank" rel="noopener">自動運転と物流最適化に関する論文</a>がInternational Journal of ITS Researchに掲載</div>
+      </div>
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-date">2025-04-09</div>
+        <div class="news-body">新入生が配属(学士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-04-03</div>
+        <div class="news-body">新入生が配属(修士3名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-03-26</div>
+        <div class="news-body">学生が卒業・修了(学士2名，修士3名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025-02-07</div>
+        <div class="news-body"><a href="https://doi.org/10.21105/joss.07617" target="_blank" rel="noopener">交通流シミュレータUXsimの論文</a>がJournal of Open Source Softwareに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-12-13</div>
+        <div class="news-body">石井優輝さん，河瀬理貴助教，瀬尾亨准教授が第22回ITSシンポジウム2024でベストポスター賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-10-01</div>
+        <div class="news-body">新入生が配属(修士3名，博士1名)，短期訪問者を受入れ(学士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-10-01</div>
+        <div class="news-body">所属組織が東京科学大学に変更</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-09-21</div>
+        <div class="news-body"><a href="https://doi.org/10.1007/s13177-024-00418-z" target="_blank" rel="noopener">ライドシェア向け信号制御手法の論文</a>がInternational Journal of ITS Researchに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-09-20</div>
+        <div class="news-body">学生が修了(修士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-09-13</div>
+        <div class="news-body">学生有志が第二十三回行動モデル夏の学校で総合第2位を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-05-29</div>
+        <div class="news-body"><a href="https://doi.org/10.2208/jscejj.23-20059" target="_blank" rel="noopener">角度に着目した経路選択モデルの論文</a>が土木学会論文集に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-04-10</div>
+        <div class="news-body">新入生が配属(学士2名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-04-03</div>
+        <div class="news-body">新入生が配属(修士3名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-03-26</div>
+        <div class="news-body">学生が卒業・修了(学士2名，修士4名，博士1名)．飯塚叶恵さんが修士優秀論文賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-02-28</div>
+        <div class="news-body"><a href="https://doi.org/10.1016/j.trc.2024.104534" target="_blank" rel="noopener">高速道路上の車両軌跡推定の論文</a>がTransportation Research Part Cに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024-02-15</div>
+        <div class="news-body"><a href="https://doi.org/10.14954/jste.10.1_A_316" target="_blank" rel="noopener">コネクティッドカーデータを使った交通流分析の論文</a>が交通工学論文集に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-12-01</div>
+        <div class="news-body">河瀬理貴助教が米谷・佐佐木賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-11-10</div>
+        <div class="news-body">研究室が引越．新所在地は<a href="contact.html">西6号館407/411号室</a></div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-10-07</div>
+        <div class="news-body">学生有志がM-BIC 2023で優秀賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-10-02</div>
+        <div class="news-body">書籍『<a href="https://www.coronasha.co.jp/np/isbn/9784339052794/" target="_blank" rel="noopener">マクロ交通流シミュレーション：数学的基礎理論とPythonによる実装</a>』がコロナ社より出版</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-09-29</div>
+        <div class="news-body">交通流シミュレータ「<a href="https://github.com/toruseo/UXsim" target="_blank" rel="noopener">UXsim</a>」を公開</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-09-27</div>
+        <div class="news-body">新入生が配属(修士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-09-05</div>
+        <div class="news-body">短期訪問者を受入れ(修士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-06-09</div>
+        <div class="news-body">河瀬理貴助教が土木学会論文賞，中西航特別研究員が土木学会論文奨励賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-05-12</div>
+        <div class="news-body"><a href="https://doi.org/10.2208/jscejipm.78.5_I_825" target="_blank" rel="noopener">方向統計学を用いた交通現象分析の論文</a>が土木学会論文集に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-04-12</div>
+        <div class="news-body">新入生が配属(学士2名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-04-01</div>
+        <div class="news-body">新入生が配属(修士2名，博士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-03-27</div>
+        <div class="news-body">学生が卒業・修了(学士3名，修士3名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-02-02</div>
+        <div class="news-body"><a href="https://doi.org/10.1016/j.ejor.2023.01.048" target="_blank" rel="noopener">災害時の救援物資に関する理論研究の論文</a>がEuropean Journal of Operational Researchに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-01-17</div>
+        <div class="news-body"><a href="https://doi.org/10.1007/s13177-022-00340-2" target="_blank" rel="noopener">自動運転と公共交通の統合最適化についての論文</a>がInternational Journal of ITS Researchに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023-01-09</div>
+        <div class="news-body">Garima Dahiya研究員が退職</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-12-16</div>
+        <div class="news-body">Garima Dahiya研究員が吉川・山口賞を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-10-25</div>
+        <div class="news-body">長期訪問者を受入れ(博士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-10-14</div>
+        <div class="news-body">GPSによる道路ネットワークデータ自動作成に関する論文が『GIS－理論と応用』に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-10-01</div>
+        <div class="news-body">Garima Dahiya研究員が着任</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-09-28</div>
+        <div class="news-body">新入生が配属(修士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-09-25</div>
+        <div class="news-body">学生有志が第二十一回行動モデル夏の学校で総合第三位を受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-09-22</div>
+        <div class="news-body">学生が修了(博士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-08-16</div>
+        <div class="news-body"><a href="https://seo.cv.ens.titech.ac.jp/traffic-flow-demo/bottleneck_jp.html" target="_blank" rel="noopener">交通流のWebブラウザ上デモ</a>を公開</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-08-08</div>
+        <div class="news-body"><a href="https://github.com/toruseo/FreeTSE" target="_blank" rel="noopener">交通状態推定ソフトウェア</a>を公開</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-06-20</div>
+        <div class="news-body">長期訪問者を受入れ(博士1名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-04-22</div>
+        <div class="news-body"><a href="https://doi.org/10.1007/s11116-022-10281-0" target="_blank" rel="noopener">鉄道システムの理論解析についての論文</a>がTransportationに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-04-13</div>
+        <div class="news-body">新入生が配属(学士3名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-04-01</div>
+        <div class="news-body">河瀬理貴助教およびスタッフ3名が着任．学生(博士2名，修士8名)が配属</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022-03-28</div>
+        <div class="news-body">学生が卒業(学士2名)．金森勇輝さんがKimura Awardを受賞</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2021-05-17</div>
+        <div class="news-body">Elsevier社からInternational Encyclopedia of Transportationが出版．交通流についての記事2件（<a href="https://doi.org/10.1016/B978-0-08-102671-7.10306-9" target="_blank" rel="noopener">1</a>，<a href="https://doi.org/10.1016/B978-0-08-102671-7.10303-3" target="_blank" rel="noopener">2</a>）を寄稿</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2021-04-20</div>
+        <div class="news-body"><a href="https://doi.org/10.2208/jscejipm.76.5_I_1273" target="_blank" rel="noopener">強化学習による交通制御についての論文</a>が土木学会論文集に掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2021-04-19</div>
+        <div class="news-body"><a href="https://doi.org/10.1109/TITS.2021.3071512" target="_blank" rel="noopener">自動運転の最適化についての論文</a>がIEEE Transactions on ITSに掲載</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2021-04-14</div>
+        <div class="news-body">新入生が配属(学士2名)</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2021-04-12</div>
+        <div class="news-body">ホームページを開設</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2021-04-01</div>
+        <div class="news-body">瀬尾亨准教授が着任，研究室を設立</div>
+      </div>
+    </div>
+  </details>
+
+  <br>
+  <p>最新活動情報は<a href="https://bsky.app/profile/seolabsciencetokyo.bsky.social" target="_blank" rel="noopener">Bluesky</a>と<a href="https://x.com/SeoLabSciTokyo" target="_blank" rel="noopener">twitter/X</a>で随時更新しています</p>
+  <script async src="https://bst.heion.net/timeline.js" data-handle="seolabsciencetokyo.bsky.social" data-theme="light" data-width="640" data-height="800" data-lang="ja" data-pin="0"></script>
+</main></body></html>

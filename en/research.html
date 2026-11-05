@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="Author" content="Toru Seo">
+<title>Research - Seo Lab, Institute of Science Tokyo</title>
+<link rel="icon" type="image/png" href="../assets/seolab_icon.png">
+<link rel="stylesheet" href="../assets/styles.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2PFQQMG6D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R2PFQQMG6D');
+</script>
+</head>
+<body data-page="research">
+<nav class="nav">
+  <a href="index.html" class="brand"><img class="brand-mark" src="../assets/seolab_icon.png" alt=""><span class="brand-jp">Seo Lab</span></a>
+  <button class="nav-burger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+  <div class="nav-links"><a href="index.html">Top</a><a href="research.html" class="active">Research</a><a href="member.html">Members</a><a href="paper.html">Publications</a><a href="software.html">Softwares</a><a href="contact.html">Contact</a><a href="link.html">Links</a><a href="../index.html" class="lang-btn">JP</a></div>
+</nav>
+<main>
+<h1>Research themes</h1>
+<p>Transportation is essential in our lives. It is used in every aspect of society including commuting, shopping, logistics, travel, and evacuation. However, transportation comes with significant issues such as congestion and environmental impact, and solving these issues is desired for the realization of a better society.</p>
+<p>Transportation is a system that integrates physics and human behavior. For instance, the movement of cars follows the equations of motion. On the other hand, human thought is unique to humans and cannot be accurately replicated (yet). This hybrid system possesses many unresolved questions, making it an interesting subject worthy of research and innovation.</p>
+<p>Based on these social significance and intrigue, our lab studies transportation, both vehicular and human, using theory and data based on mathematical and computer/data scientific approaches. Physical theories clearly explain the mechanisms of phenomena and provide guidelines for controlling them. On the other hand, the large amount of data available today provides us with various insights through means such as machine learning. The goal of our lab is to contribute to the realization of better transportation by appropriately combining theory and data, and to conduct interesting research in the process.</p>
+
+<div class="card-grid">
+  <a href="#tse" class="card">
+    <h3>Traffic state estimation, data analysis, and control</h3>
+    <p>Estimate and analyze traffic conditions of entire road networks from limited observation data.</p>
+  </a>
+  <a href="#tft" class="card">
+    <h3>Traffic flow theory</h3>
+    <p>Mathematical modeling and simulation of vehicle, pedestrian, and rail flow dynamics.</p>
+  </a>
+  <a href="#next" class="card">
+    <h3>Next-gen transportation systems</h3>
+    <p>Theoretical foundations for automated vehicles, ridesharing, and MaaS.</p>
+  </a>
+  <a href="#uncertain" class="card">
+    <h3>Stochastic transportation and logistics systems</h3>
+    <p>Control under uncertainty — from disaster logistics to daily traffic.</p>
+  </a>
+</div>
+
+<h2 id="tse">Traffic state estimation, data analysis, and control</h2>
+<p>Automobile traffic plays a vital role in today's society, but its efficiency is being reduced by congestion, a problem that needs to be solved. However, the road network is so vast that no one knows exactly when, where, and to what extent congestion occurs. Therefore, we are developing and verifying traffic state estimation methods that infer the traffic condition of the entire road network based on limited observation data. Furthermore, based on the obtained data and estimation results, applications such as analyzing the nature of traffic and finding the optimal control are also studied. The data are such as GPS on smartphones and car navigation systems and road-side vehicle detectors. We use methodologies such as traffic flow theory, data assimilation, and machine learning.</p>
+<figure>
+  <img src="../img/tse_en.png" width="680" alt="Traffic state estimation">
+  <figcaption>Fig: Traffic state estimation</figcaption>
+</figure>
+<figure>
+  <video controls width="600"><source src="../img/shutoko_traffic.mp4" type="video/mp4"></video>
+  <figcaption>Video: Traffic flow dynamics on Tokyo Metropolitan Expressway (<a href="https://twitter.com/SeoLabTokyoTech/status/1542412285330989056" target="_blank" rel="noopener">Data source</a>)</figcaption>
+</figure>
+
+<h2 id="tft">Traffic flow theory</h2>
+<p>Traffic flow theory is a mathematical concept that describes the collective behavior of automobile vehicles. It is used to simulate traffic flow in road networks and as a basis for traffic control and traffic state estimation. It can also be used to describe the flow of pedestrians and trains. In our lab, we are improving the models and implementing it as a simulation. We use methodologies such as partial differential equations and numerical simulation.</p>
+<p>Please try our easy-to-use <a href="../traffic-flow-demo/bottleneck.html">traffic flow simulation on web browser</a>.</p>
+<figure>
+  <img src="../img/trafficflowtheory_en.png" width="320" alt="Traffic flow theory">
+  <img src="../img/trafficsim.gif" width="380" alt="Traffic simulation">
+  <figcaption>Fig: Traffic flow theory and simulation</figcaption>
+</figure>
+
+<h2 id="next">Next-gen transportation systems</h2>
+<p>Next-gen transportation systems such as automated vehicles and ridesharing have various possibilities. Our lab studies the fundamental and mathematical theories for realizing a better society by using these systems. For example, we are dealing with data-driven optimal dispatch control for automated vehicles, matching for ridesharing, and urban transportation system design for these systems. We use methodologies such as mathematical optimization, reinforcement learning, simulation, and data analysis.</p>
+<figure>
+  <img src="../img/sosav_en.png" width="680" alt="Shared autonomous vehicles">
+  <figcaption>Fig: Optimization of shared automated vehicle system in NYC</figcaption>
+</figure>
+
+<h2 id="uncertain">Stochastic transportation and logistics systems</h2>
+<p>Transportation and logistics managers inevitably encounter uncertainties. In daily traffic such as commuting, they require real-time control while exploiting observations of traffic states that fluctuate stochastically. Meanwhile, in the aftermath of disasters, they require control assuming limited observations due to damaged communication infrastructure. Our lab develops stochastic control and decentralized control of uncertain transportation and logistics systems and solution algorithms, based on their theoretical analyses. We use methodologies such as mathematical optimization, optimal control, dynamic programming, stochastic programming, and numerical simulation.</p>
+<figure>
+  <img src="../img/kawase_en.png" width="680" alt="Humanitarian logistics">
+  <figcaption>Fig: Optimal humanitarian logistics network and inventory control</figcaption>
+</figure>
+
+<h2>Skills</h2>
+<p>
+  Our educational policy aims to equip students with the necessary skills to understand (or create) mathematical models that abstract real-world phenomena, solve or compute such models, perform statistical analysis of data, develop computer programs, and write logically.
+  We place emphasis on developing a solid understanding of principles and their application to the expression and resolution of real problems.
+</p>
+
+<p>More specifically, the following skills, knowledge, and tools are mainly used for our research. It is not necessary to be able to use them at the time of assignment to the laboratory, but they can be acquired through research. We welcome those who wish to acquire these skills.</p>
+<ul>
+  <li>Computer programming (mainly Python)</li>
+  <li>Computer simulation</li>
+  <li>Mathematical optimization</li>
+  <li>Partial differential equations</li>
+  <li>Probability and statistics</li>
+  <li>Machine learning / data science</li>
+  <li>LaTeX</li>
+</ul>
+</main></body></html>

@@ -1,0 +1,13 @@
+body {
+	font-family: "ƒqƒ‰ƒMƒmŠpƒS Pro W3", "Hiragino Kaku Gothic Pro", "ƒƒCƒŠƒI", "Meiryo", sans-serif;
+    background-color: #FFFFFF;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+canvas {
+	max-width: 100%;
+	height: auto;
+}
