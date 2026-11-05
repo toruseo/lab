@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 東京科学大学 瀬尾研究室の公式サイト．ビルドツール・パッケージマネージャ・テストランナーは一切なく，純粋な静的HTML + CSS のみで構成される．日本語版（ルート直下）と英語版（`en/`）の二言語構成．
 
-公開URL： https://seo.cv.ens.titech.ac.jp/
+公開URL： https://toruseo.jp/lab/
 
 ### Claude が自分で動作確認しない
 
